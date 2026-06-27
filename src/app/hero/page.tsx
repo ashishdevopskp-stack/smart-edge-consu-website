@@ -267,10 +267,7 @@ export default function HeroSection() {
           {/* ══ LEFT ══ */}
           <div className="hs-left">
 
-            <span className="hs-eyebrow">
-              <span className="hs-eyebrow-dot" />
-              Admissions Open 2024–25
-            </span>
+            
 
             <h1 className="hs-h1">
               Your Complete<br />

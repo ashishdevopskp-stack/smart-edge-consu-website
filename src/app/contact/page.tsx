@@ -255,13 +255,7 @@ export default function ContactPage(): React.JSX.Element {
               <p className="ccard-sub">Get instant answers to your admission questions.</p>
               <a href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`} target="_blank" rel="noopener noreferrer" className="btn btn-green ccard-btn" style={{ fontSize: 13, padding: "9px 18px" }}><MessageCircle size={13} strokeWidth={2} /> WhatsApp Now</a>
             </div>
-            {/* Email */}
-            <div className="ccard">
-              <div className="ccard-icon" style={{ background: "#EDE9FE" }}><Mail size={22} color="#7C3AED" strokeWidth={2} /></div>
-              <p className="ccard-label">Email</p>
-              <p className="ccard-val" style={{ fontSize: 14 }}>{EMAIL}</p>
-              <a href={`mailto:${EMAIL}`} className="btn ccard-btn" style={{ background: "linear-gradient(135deg,#7C3AED,#8B5CF6)", boxShadow: "0 4px 14px rgba(124,58,237,.26)", fontSize: 13, padding: "9px 18px" }}><Mail size={13} strokeWidth={2} /> Send Email</a>
-            </div>
+           
           </div>
         </div>
 
