@@ -191,7 +191,7 @@ export default function MissionPage(): React.JSX.Element {
           <div className="ms-img-side">
             <div className="ms-ring" />
             <div className="ms-ring2" />
-            <CurvedImage src="/mission.png" alt="Our Mission" size="lg" />
+            <CurvedImage src="/our-mission.png" alt="Our Mission" size="lg" />
           </div>
         </div>
 

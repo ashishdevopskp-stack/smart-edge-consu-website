@@ -168,7 +168,7 @@ export default function ExperiencePage(): React.JSX.Element {
 
           <div className="ex-img-side">
             <div className="ex-ring" /><div className="ex-ring2" />
-            <CurvedImage src="/experience.png" alt="Our Experience" size="lg" />
+            <CurvedImage src="/our-experience.png" alt="Our Experience" size="lg" />
             <div className="ex-metrics">
               {METRICS.map(({ value, label, color, bg }) => (
                 <div className="ex-metric-card" key={label} style={{ borderTopColor: color }}>

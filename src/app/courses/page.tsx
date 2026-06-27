@@ -83,19 +83,22 @@ export default function CoursesPage(): React.JSX.Element {
           --shlg: 0 12px 40px rgba(15,22,40,.10);
         }
 
-        /* ── PAGE ── */
-        .cp { position:relative; min-height:100vh; background:var(--bg); font-family:var(--fb); overflow-x:hidden; padding-top:100px; }
+        /* ── PAGE ──
+           NOTE: no top padding here — the global layout.tsx <main> already
+           offsets content by var(--nav-h) to clear the fixed navbar.
+           Adding padding-top here too caused a large double-gap. */
+        .cp { position:relative; min-height:100vh; background:var(--bg); font-family:var(--fb); overflow-x:hidden; }
         .blob { position:absolute; border-radius:50%; pointer-events:none; filter:blur(80px); }
         .blob1 { width:520px; height:520px; top:-140px; right:-140px; background:radial-gradient(circle,#DBEAFE,transparent 70%); opacity:.55; }
         .blob2 { width:380px; height:380px; top:60%; left:-100px; background:radial-gradient(circle,#D1FAE5,transparent 70%); opacity:.45; }
         .dots  { position:absolute; inset:0; pointer-events:none; background-image:radial-gradient(circle,#CBD5E1 1px,transparent 1px); background-size:28px 28px; opacity:.28; }
         .wrap  { position:relative; z-index:5; max-width:1160px; margin:0 auto; padding:0 40px; }
 
-        /* ── HERO ── */
+        /* ── HERO ── (top padding now supplies the section's own breathing room) */
         .hero {
           position:relative; z-index:5;
           max-width:860px; margin:0 auto;
-          padding:48px 40px 0;
+          padding:56px 40px 0;
           text-align:center;
           display:flex; flex-direction:column; align-items:center; gap:20px;
         }
@@ -297,7 +300,7 @@ export default function CoursesPage(): React.JSX.Element {
         }
         @media (max-width:640px) {
           .grid { grid-template-columns:1fr; }
-          .hero { padding:24px 16px 0; }
+          .hero { padding:32px 16px 0; }
           .wrap { padding:0 16px; }
           .filter-row { flex-direction:column; }
           .search-box { min-width:unset; }
@@ -510,6 +513,7 @@ export default function CoursesPage(): React.JSX.Element {
               </p>
             </div>
             <a
+            
               href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}
               target="_blank" rel="noopener noreferrer"
               className="cta-btn"

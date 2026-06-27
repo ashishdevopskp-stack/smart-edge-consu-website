@@ -43,8 +43,24 @@ export default function ContactPage(): React.JSX.Element {
     if (!form.city.trim())                        e2.city   = "Required";
     setErrors(e2);
     if (Object.values(e2).some(Boolean)) return;
+
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
+
+    // Build a clean, formatted enquiry message and send it straight to WhatsApp.
+    const message =
+      `Hi, I want admission guidance.\n\n` +
+      `*New Enquiry from Website*\n` +
+      `Name: ${form.name.trim()}\n` +
+      `Mobile: ${form.mobile.trim()}\n` +
+      `Course Interest: ${form.course}\n` +
+      `City: ${form.city.trim()}`;
+
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    // Small delay so the loading state is visible, then open WhatsApp.
+    await new Promise(r => setTimeout(r, 500));
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+
     setLoading(false);
     setDone(true);
   };
@@ -141,7 +157,8 @@ export default function ContactPage(): React.JSX.Element {
         .sring { width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#D1FAE5,#A7F3D0); border:2px solid #6EE7B7; display:flex; align-items:center; justify-content:center; animation:si .4s cubic-bezier(.34,1.56,.64,1) both; }
         @keyframes si { from{opacity:0;transform:scale(.5)} to{opacity:1;transform:scale(1)} }
         .stitle { font-family:var(--fd); font-size:17px; font-weight:800; color:var(--txt); }
-        .ssub   { font-size:13px; color:var(--muted); line-height:1.7; max-width:260px; }
+        .ssub   { font-size:13px; color:var(--muted); line-height:1.7; max-width:280px; }
+        .sretry { margin-top:6px; background:none; border:none; color:#1D4ED8; font-family:var(--fd); font-size:12.5px; font-weight:700; cursor:pointer; text-decoration:underline; }
 
         /* HOURS */
         .hours-card { background:var(--surf); border:1.5px solid var(--bdr); border-radius:var(--rlg); overflow:hidden; box-shadow:var(--shsm); }
@@ -258,12 +275,40 @@ export default function ContactPage(): React.JSX.Element {
                 <div className="loc-card">
                   <p className="loc-title">Patna Office</p>
                   <p className="loc-addr"><MapPin size={15} color="#1D4ED8" strokeWidth={2} style={{ flexShrink: 0, marginTop: 2 }} />Bhagwat Nagar, Near NRL Petrol Pump, New Bypass, Patna – 800026</p>
-                  <iframe className="loc-map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Bhagwat+Nagar+New+Bypass+Patna+Bihar" allowFullScreen loading="lazy" title="Patna Office" />
+                  <iframe
+                    className="loc-map"
+                    src="https://www.google.com/maps?q=Bhagwat+Nagar,+Near+NRL+Petrol+Pump,+New+Bypass,+Patna,+Bihar+800026&output=embed"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Patna Office Location"
+                  />
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Bhagwat+Nagar,+Near+NRL+Petrol+Pump,+New+Bypass,+Patna,+Bihar+800026"
+                    target="_blank" rel="noopener noreferrer"
+                    style={{ fontFamily: "var(--fd)", fontSize: 12.5, fontWeight: 700, color: "#1D4ED8", textDecoration: "none", marginTop: 2 }}
+                  >
+                    Get Directions →
+                  </a>
                 </div>
                 <div className="loc-card">
                   <p className="loc-title">Sheikhpura Office</p>
                   <p className="loc-addr"><MapPin size={15} color="#7C3AED" strokeWidth={2} style={{ flexShrink: 0, marginTop: 2 }} />Aditya Chowk, MAFO, Sheikhpura – 811102</p>
-                  <iframe className="loc-map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Aditya+Chowk+Sheikhpura+Bihar" allowFullScreen loading="lazy" title="Sheikhpura Office" />
+                  <iframe
+                    className="loc-map"
+                    src="https://www.google.com/maps?q=Aditya+Chowk,+MAFO,+Sheikhpura,+Bihar+811102&output=embed"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Sheikhpura Office Location"
+                  />
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Aditya+Chowk,+MAFO,+Sheikhpura,+Bihar+811102"
+                    target="_blank" rel="noopener noreferrer"
+                    style={{ fontFamily: "var(--fd)", fontSize: 12.5, fontWeight: 700, color: "#7C3AED", textDecoration: "none", marginTop: 2 }}
+                  >
+                    Get Directions →
+                  </a>
                 </div>
               </div>
             </div>
@@ -272,7 +317,7 @@ export default function ContactPage(): React.JSX.Element {
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {/* Quick Form */}
               <div>
-                <h2 className="sec-h">Free Counselling <span>We'll call you back within 10–15 minutes</span></h2>
+                <h2 className="sec-h">Free Counselling <span>We'll WhatsApp you back within 10–15 minutes</span></h2>
                 <div className="form-card">
                   <div className="form-head">
                     <p className="form-head-tag">Quick Enquiry</p>
@@ -282,8 +327,24 @@ export default function ContactPage(): React.JSX.Element {
                     {done ? (
                       <div className="fsuccess">
                         <div className="sring"><CheckCircle2 size={28} color="#047857" strokeWidth={2} /></div>
-                        <p className="stitle">We'll call you shortly!</p>
-                        <p className="ssub">Our counsellor will reach you at <strong>{form.mobile}</strong> within 10–15 minutes.</p>
+                        <p className="stitle">Sent on WhatsApp!</p>
+                        <p className="ssub">If a new WhatsApp tab didn't open, your popup blocker may have stopped it — tap the button below to send it manually.</p>
+                        <button
+                          type="button"
+                          className="sretry"
+                          onClick={() => {
+                            const message =
+                              `Hi, I want admission guidance.\n\n` +
+                              `*New Enquiry from Website*\n` +
+                              `Name: ${form.name.trim()}\n` +
+                              `Mobile: ${form.mobile.trim()}\n` +
+                              `Course Interest: ${form.course}\n` +
+                              `City: ${form.city.trim()}`;
+                            window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+                          }}
+                        >
+                          Open WhatsApp again
+                        </button>
                       </div>
                     ) : (
                       <form onSubmit={submit} noValidate>
@@ -315,7 +376,7 @@ export default function ContactPage(): React.JSX.Element {
                           </div>
                         </div>
                         <button type="submit" className="fsub" disabled={loading}>
-                          {loading ? <><div className="spin" /> Submitting…</> : <><Send size={14} strokeWidth={2} /> Submit &amp; Get Call Back</>}
+                          {loading ? <><div className="spin" /> Opening WhatsApp…</> : <><Send size={14} strokeWidth={2} /> Submit &amp; Send on WhatsApp</>}
                         </button>
                         <p className="trust-txt"><ShieldCheck size={12} color="#047857" strokeWidth={2} /> Your information is safe and used only for admission guidance.</p>
                       </form>

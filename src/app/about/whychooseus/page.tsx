@@ -119,7 +119,7 @@ export default function WhyChooseUsPage(): React.JSX.Element {
         <div className="wc-hero">
           <div className="wc-img-side">
             <div className="wc-ring" /><div className="wc-ring2" />
-            <CurvedImage src="/whychooseus.png" alt="Why Choose Smart Edge" size="lg" />
+            <CurvedImage src="/why-choose-us.png" alt="Why Choose Smart Edge" size="lg" />
           </div>
 
           <div className="wc-text-side">

@@ -1,8 +1,22 @@
-// app/layout.tsx
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Plus_Jakarta_Sans, Inter } from "next/font/google"
+import Navbar from './Navbar'
+import Footer from './footer/page'
+import FloatingButtons from './FloatingButtons'
+import TopBanner from './TopBanner'
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['500', '600', '700', '800'],
+  variable: '--font-jakarta',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -37,11 +51,14 @@ export const metadata: Metadata = {
     title: 'Smart Edge Education Consultancy',
     description: 'Free admission counselling. 1000+ students guided.',
   },
-  themeColor: '#1565C0',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#1565C0',
 }
 
 export default function RootLayout({
@@ -50,12 +67,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${plusJakarta.variable} ${inter.variable}`}>
       <body>
-        
-        {children}
+        <TopBanner/>
+        <Navbar />
 
-        
+        <main style={{ paddingTop: 'var(--nav-h, 68px)', minHeight: '60vh' }}>
+          {children}
+        </main>
+
+        <Footer />
+        <FloatingButtons />
       </body>
     </html>
   )

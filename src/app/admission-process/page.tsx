@@ -349,7 +349,7 @@ export default function AdmissionProcessPage(): React.JSX.Element {
     </Link>
 
     <Link
-      href="/admissionprocess/applynow"
+      href="/admission-process/apply-now"
       className="ap-nav-card"
     >
       <div>
@@ -361,18 +361,7 @@ export default function AdmissionProcessPage(): React.JSX.Element {
   </div>
 </div>
 
-        {/* CTA */}
-        <div className="ap-cta-wrap">
-          <div className="ap-cta-inner">
-            <div>
-              <p className="ap-cta-label">Ready to begin?</p>
-              <p className="ap-cta-title">Start Your Admission Journey Today</p>
-            </div>
-            <Link href="/admission-process/apply-now" className="ap-cta-btn">
-              Apply Now <ArrowRight size={15} strokeWidth={2.5} />
-            </Link>
-          </div>
-        </div>
+       
       </div>
     </>
   );

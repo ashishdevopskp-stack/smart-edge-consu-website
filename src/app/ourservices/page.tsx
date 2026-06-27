@@ -10,53 +10,7 @@ import CurvedImage from "../CurvedImage";
 
 const WA_NUMBER = "919576461623";
 const WA_MSG = encodeURIComponent("Hi, I need career guidance. Please help me choose the right course.");
-const SERVICES = [
-  {
-    icon: Compass,
-    color: "#1D4ED8",
-    bg: "#DBEAFE",
-    border: "#BFDBFE",
-    title: "Career Counselling",
-    desc: "One-on-one sessions with experienced counsellors who help you discover your strengths and map the best career path.",
-    link: "/ourservices/career-counselling",
-  },
-  {
-    icon: GitBranch,
-    color: "#7C3AED",
-    bg: "#EDE9FE",
-    border: "#C4B5FD",
-    title: "Stream Selection",
-    desc: "Confused between Science, Commerce, and Arts? We help you pick the right stream based on your interests and goals.",
-    link: "/ourservices/stream-selection",
-  },
-  {
-    icon: BarChart2,
-    color: "#0369A1",
-    bg: "#E0F2FE",
-    border: "#BAE6FD",
-    title: "Course Comparison",
-    desc: "Compare courses side-by-side — fees, duration, career scope, and more — so you make an informed decision.",
-    link: "/ourservices/course-comparison",
-  },
-  {
-    icon: Building2,
-    color: "#047857",
-    bg: "#D1FAE5",
-    border: "#A7F3D0",
-    title: "College Recommendation",
-    desc: "Get a curated list of the best colleges matching your eligibility, budget, and preferred location.",
-    link: "/ourservices/college-recommendation",
-  },
-  {
-    icon: Map,
-    color: "#B45309",
-    bg: "#FEF3C7",
-    border: "#FDE68A",
-    title: "Career Roadmap",
-    desc: "Receive a personalised step-by-step roadmap from today's enrolment to your dream career destination.",
-    link: "/ourservices/career-roadmap",
-  },
-];
+
 const STATS = [
   { value: "10,000+", label: "Students Guided" },
   { value: "500+",    label: "Colleges Listed" },
@@ -315,32 +269,7 @@ export default function CareerGuidancePage(): React.JSX.Element {
           </div>
         </div>
 
-        {/* SERVICES */}
-        <div className="cg-services-wrap">
-          <h2 className="cg-section-heading">Our Career Guidance Services</h2>
-          <p className="cg-section-sub">Everything you need to make the right academic and career decision.</p>
-          <div className="cg-services-grid">
-            {SERVICES.map((svc) => {
-              const Icon = svc.icon;
-              return (
-                <Link href={svc.link} className="cg-service-card" key={svc.title}>
-                  <div
-                    className="cg-service-icon"
-                    style={{ background: svc.bg, borderColor: svc.border }}
-                  >
-                    <Icon size={22} color={svc.color} strokeWidth={2} />
-                  </div>
-                  <p className="cg-service-title">{svc.title}</p>
-                  <p className="cg-service-desc">{svc.desc}</p>
-                  <span className="cg-service-link">
-                    Learn more <ArrowRight size={13} strokeWidth={2.5} />
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
+       
         {/* HOW IT WORKS */}
         <div className="cg-how-wrap">
           <h2 className="cg-section-heading">How It Works</h2>

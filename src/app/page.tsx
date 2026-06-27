@@ -1,16 +1,12 @@
-// app/page.tsx
 import type { Metadata } from 'next'
 import HeroSection from '@/app/hero/page'
-import OurServices from '@/app/ourservices/page'
-import LeadForm from '@/app/leadform/get-free-counselling-page'
-
-import { PocketKnife } from 'lucide-react'
 import AboutPage from './about/page'
-import AdmissionProcessPage from './admission-process/page'
-import ContactPage from './contact/page'
-import Footer from './footer/page'
 import CoursesPage from './courses/page'
-import Navbar from './Navbar'
+import AdmissionProcessPage from './admission-process/page'
+import OurServices from '@/app/ourservices/page'
+import GalleryPage from './galary/page'
+import LegalPage from './legal/page'
+import ContactPage from './contact/page'
 
 export const metadata: Metadata = {
   title: 'Smart Edge Education Consultancy — Admission & Career Guidance Bihar',
@@ -21,16 +17,13 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Navbar />
       <HeroSection />
       <AboutPage />
       <CoursesPage />
       <AdmissionProcessPage />
       <OurServices />
-      <LeadForm />
+      <GalleryPage />
       <ContactPage />
-      <Footer />
-      
     </>
   )
 }

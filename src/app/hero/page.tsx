@@ -96,7 +96,7 @@ export default function HeroSection() {
         }
 
         .hs-section {
-        padding-top: 100px;
+        padding-top: 20px;
           position: relative;
           min-height: 100vh;
           background: var(--c-bg);

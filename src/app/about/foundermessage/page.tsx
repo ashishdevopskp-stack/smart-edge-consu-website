@@ -142,7 +142,7 @@ export default function FounderPage(): React.JSX.Element {
         <div className="fm-hero">
           <div className="fm-img-side">
             <div className="fm-ring" /><div className="fm-ring2" />
-            <CurvedImage src="/founder.png" alt="Founder - Smart Edge" size="lg" />
+            <CurvedImage src="/sonu-sharma.png" alt="Founder - Smart Edge" size="lg" />
             <div className="fm-stats">
               {STATS.map(({ value, label }) => (
                 <div className="fm-stat" key={label}>

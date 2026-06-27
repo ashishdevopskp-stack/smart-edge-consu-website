@@ -116,7 +116,7 @@ export default function VisionPage(): React.JSX.Element {
         <div className="vs-hero">
           <div className="vs-img-side">
             <div className="vs-ring" /><div className="vs-ring2" />
-            <CurvedImage src="/vision.png" alt="Our Vision" size="lg" />
+            <CurvedImage src="/our-vision.png" alt="Our Vision" size="lg" />
           </div>
           <div className="vs-text-side">
             <span className="vs-eyebrow"><span className="vs-eyebrow-dot" />Our Vision</span>
