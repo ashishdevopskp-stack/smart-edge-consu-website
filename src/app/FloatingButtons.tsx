@@ -6,7 +6,7 @@ import { Phone, MessageCircle } from "lucide-react";
 const PHONE     = "9576461623";
 const WA_NUMBER = "919576461623";
 const WA_MSG    = encodeURIComponent("Hi, I want admission guidance.");
-const FB_LINK   = "https://www.facebook.com/smartedgeeducationconsultancy";
+const FB_LINK   = "https://www.facebook.com/share/197eiV4i4F/";
 
 function FacebookIcon({ size = 20 }: { size?: number }) {
   return (

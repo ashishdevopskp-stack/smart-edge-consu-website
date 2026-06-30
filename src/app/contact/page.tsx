@@ -129,7 +129,7 @@ export default function ContactPage(): React.JSX.Element {
         .form-head::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at top right,rgba(255,255,255,.13),transparent 60%); }
         .form-head-tag   { font-size:10.5px; font-weight:700; color:rgba(255,255,255,.65); letter-spacing:.09em; text-transform:uppercase; margin-bottom:3px; }
         .form-head-title { font-family:var(--fd); font-size:17px; font-weight:800; color:#fff; }
-        .form-body { padding:22px 24px 24px; }
+        .form-body { padding:42px 24px 54px; }
         .ff { margin-bottom:12px; }
         .fl { display:block; font-size:12px; font-weight:700; color:var(--txt); margin-bottom:4px; font-family:var(--fd); }
         .fl span { color:#DC2626; margin-left:2px; }
@@ -308,11 +308,60 @@ export default function ContactPage(): React.JSX.Element {
             </div>
 
             {/* Form + Hours stacked */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            
+              {/* Hours */}
+              <div>
+                <h2 className="sec-h" style={{ marginBottom: 14 }}>Working Hours <span>We're available 6 days a week</span></h2>
+                <div className="hours-card">
+                  <div className="hours-row">
+                    <span className="hours-day">Monday – Saturday</span>
+                    <span className="hours-time">10:00 AM – 6:00 PM</span>
+                    <span className="hours-open">Open</span>
+                  </div>
+                  <div className="hours-row">
+                    <span className="hours-day">Sunday</span>
+                    <span className="hours-time">By Appointment</span>
+                    <span className="hours-appt">Appointment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 6. BANNER */}
+        <div className="wrap sec">
+          <div className="banner">
+            <div>
+              <p className="banner-tag">Special Offer</p>
+              <p className="banner-title">Free Education + Hostel + Food</p>
+              <p className="banner-sub">Available for selected courses. Limited seats. Apply now.</p>
+            </div>
+            <Link href="/admission-process/apply-now" className="banner-btn">
+              Apply Now <ArrowRight size={15} strokeWidth={2.5} />
+            </Link>
+          </div>
+        </div>
+
+        {/* 7. WHY */}
+        <div className="wrap sec">
+          <h2 className="sec-h" style={{ textAlign: "center" }}>Why Contact Smart Edge?</h2>
+          <div className="why-grid">
+            {WHY.map(w => (
+              <div className="why-card" key={w.label}>
+                <div className="why-icon"><w.icon size={20} color="#1D4ED8" strokeWidth={2} /></div>
+                <p className="why-label">{w.label}</p>
+                <p className="why-desc">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 8. FINAL CTA */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {/* Quick Form */}
               <div>
-                <h2 className="sec-h">Free Counselling <span>We'll WhatsApp you back within 10–15 minutes</span></h2>
-                <div className="form-card">
+                <div className="form-card pading=20">
                   <div className="form-head">
                     <p className="form-head-tag">Quick Enquiry</p>
                     <p className="form-head-title">Get Free Admission Counselling</p>
@@ -379,65 +428,7 @@ export default function ContactPage(): React.JSX.Element {
                 </div>
               </div>
 
-              {/* Hours */}
-              <div>
-                <h2 className="sec-h" style={{ marginBottom: 14 }}>Working Hours <span>We're available 6 days a week</span></h2>
-                <div className="hours-card">
-                  <div className="hours-row">
-                    <span className="hours-day">Monday – Saturday</span>
-                    <span className="hours-time">10:00 AM – 6:00 PM</span>
-                    <span className="hours-open">Open</span>
-                  </div>
-                  <div className="hours-row">
-                    <span className="hours-day">Sunday</span>
-                    <span className="hours-time">By Appointment</span>
-                    <span className="hours-appt">Appointment</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 6. BANNER */}
-        <div className="wrap sec">
-          <div className="banner">
-            <div>
-              <p className="banner-tag">Special Offer</p>
-              <p className="banner-title">Free Education + Hostel + Food</p>
-              <p className="banner-sub">Available for selected courses. Limited seats. Apply now.</p>
-            </div>
-            <Link href="/admission-process/apply-now" className="banner-btn">
-              Apply Now <ArrowRight size={15} strokeWidth={2.5} />
-            </Link>
-          </div>
-        </div>
-
-        {/* 7. WHY */}
-        <div className="wrap sec">
-          <h2 className="sec-h" style={{ textAlign: "center" }}>Why Contact Smart Edge?</h2>
-          <div className="why-grid">
-            {WHY.map(w => (
-              <div className="why-card" key={w.label}>
-                <div className="why-icon"><w.icon size={20} color="#1D4ED8" strokeWidth={2} /></div>
-                <p className="why-label">{w.label}</p>
-                <p className="why-desc">{w.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 8. FINAL CTA */}
-        <div className="wrap">
-          <div className="fcta">
-            <p className="fcta-title">Ready to Start Your Career?</p>
-            <p className="fcta-sub">Speak with our experts today and get personalised admission guidance.</p>
-            <div className="fcta-btns">
-              <Link href="/admission-process/get-free-counselling" className="fcta-btn-w"><MessageCircle size={15} strokeWidth={2} /> Get Free Counselling</Link>
-              <Link href="/admission-process/apply-now" className="fcta-btn-o">Apply Now <ArrowRight size={15} strokeWidth={2.5} /></Link>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </>
   );

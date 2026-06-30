@@ -326,15 +326,9 @@ export default function CoursesPage(): React.JSX.Element {
             Choose from UGC, AICTE and NCTE approved courses across multiple streams.
             Find the right program based on your interests, qualifications, and career goals.
           </p>
-          <div className="hero-btns">
-            <a href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`} target="_blank" rel="noopener noreferrer" className="btn btn-blue">
-              <MessageCircle size={15} strokeWidth={2} /> Get Free Counselling
-            </a>
-            <a href={`tel:${PHONE}`} className="btn btn-green">
-              <Phone size={15} strokeWidth={2} /> Apply Now
-            </a>
-          </div>
+         
         </div>
+        <br />
 
         {/* ── FILTERS ── */}
         <div className="wrap filter-wrap">
@@ -415,6 +409,8 @@ export default function CoursesPage(): React.JSX.Element {
             )}
           </div>
         </div>
+        <br />
+      
 
         {/* ── STATS ── */}
         <div className="wrap stats">
@@ -424,6 +420,7 @@ export default function CoursesPage(): React.JSX.Element {
           </p>
           <div className="divider" />
         </div>
+        <br />
 
         {/* ── GRID ── */}
         <div className="wrap grid-wrap">
@@ -501,7 +498,7 @@ export default function CoursesPage(): React.JSX.Element {
             )}
           </div>
         </div>
-
+<br />
         {/* ── BOTTOM CTA ── */}
         <div className="wrap cta-wrap">
           <div className="cta-inner">

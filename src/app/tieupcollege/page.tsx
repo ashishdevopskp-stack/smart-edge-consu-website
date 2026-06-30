@@ -314,6 +314,7 @@ export default function TieUpCollegePage(): React.JSX.Element {
             </a>
           </div>
         </div>
+        <br />
 
         {/* ── FILTERS ── */}
         <div className="wrap filter-wrap">
@@ -363,6 +364,7 @@ export default function TieUpCollegePage(): React.JSX.Element {
             )}
           </div>
         </div>
+        <br />
 
         {/* ── STATS ── */}
         <div className="wrap stats">
@@ -405,31 +407,15 @@ export default function TieUpCollegePage(): React.JSX.Element {
                     <BadgeCheck size={12} strokeWidth={2.5} /> {u.state}
                   </span>
 
-                  <div className="u-cta">
-                    <a
-                    
-                      href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hi, I want more information about ${u.name}.`)}`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="u-btn u-btn-green"
-                    >
-                      <MessageCircle size={13} strokeWidth={2} /> Enquire
-                    </a>
-                    <a href={`tel:${PHONE}`} className="u-btn u-btn-blue">
-                      <Phone size={13} strokeWidth={2} /> Call
-                    </a>
-                  </div>
+                 
                 </div>
               ))
             )}
           </div>
         </div>
+        <br />
+        <br />
 
-        {/* ── CONTACT STRIP ── */}
-        <div className="wrap">
-          <div className="contact-strip">
-            <p>For more information, DM or call us at <strong>{PHONE}</strong> — ask for <strong>{CONTACT}</strong>.</p>
-          </div>
-        </div>
 
         {/* ── BOTTOM CTA ── */}
         <div className="wrap cta-wrap">

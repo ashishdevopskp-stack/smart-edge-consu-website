@@ -10,7 +10,7 @@ import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 const PHONE       = "9576461623";
 const WA_NUMBER   = "919576461623";
 const WA_MSG      = encodeURIComponent("Hi, I want admission guidance.");
-const FB_LINK     = "https://www.facebook.com/smartedgeeducationconsultancy"; // ← update to real FB URL
+const FB_LINK     = "https://www.facebook.com/share/197eiV4i4F/"; // ← update to real FB URL
 
 const NAV_LINKS = [
   { label: "Home",      href: "/" },
@@ -219,7 +219,7 @@ export default function Navbar(): React.JSX.Element {
           flex: 1;
           text-align: center;
           font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 13px;
+          font-size: 18px;
           font-weight: 800;
           color: #0F1628;
           letter-spacing: -0.02em;
