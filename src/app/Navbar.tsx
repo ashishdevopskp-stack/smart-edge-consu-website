@@ -339,7 +339,7 @@ export default function Navbar(): React.JSX.Element {
         }
         @media (max-width: 400px) {
           .nb-inner { padding: 0 16px; }
-          .nb-mobile-brand { font-size: 11.5px; }
+          .nb-mobile-brand { font-size: 16.5px; }
         }
       `}</style>
 
